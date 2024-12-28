@@ -1,0 +1,10 @@
+﻿logs
+*.log
+build/Release
+js/*.js
+node_modules
+package-lock.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
