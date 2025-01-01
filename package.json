@@ -9,7 +9,11 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.49.1",
+    "@types/faker": "^6.6.8",
     "@types/node": "^22.10.2",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
   }
 }
