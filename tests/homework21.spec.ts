@@ -243,7 +243,7 @@ test.describe(("Homework23 test cases"), () => {
 
   test.describe('Registration process validations', () => {
     test('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
-      const input = 'testuser';
+      const input = faker.;
       nameField = page.locator('#signupName');
       lastNameField = page.locator('#signupLastName');
       emailField = page.locator('#signupEmail');
