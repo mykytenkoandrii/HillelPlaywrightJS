@@ -1,5 +1,4 @@
 import { test, expect, Locator } from '@playwright/test';
-import { faker } from '@faker-js/faker/';
 import HomePage from '../page-objects/pages/HomePage';
 import RegisterForm from '../page-objects/pages/RegisterForm';
 
@@ -131,7 +130,7 @@ test.describe(("Homework24 test cases"), () => {
 
   test.describe('Registration process validations', () => {
     test('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
-      const input = faker.internet.username();
+      const input = 'autotest';
 
       registerForm.inputNameField(input);
       registerForm.inputLastNameField(input);
@@ -143,7 +142,7 @@ test.describe(("Homework24 test cases"), () => {
     });
 
     test('Check Registration successfull process', async ({page}) => {
-      const input = faker.internet.username();
+      const input = 'autotest';
 
       registerForm.inputNameField(input);
       await page.waitForTimeout(500);
