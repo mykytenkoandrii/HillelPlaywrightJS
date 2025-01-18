@@ -1,6 +1,8 @@
 import { test, expect, Locator } from '@playwright/test';
 import HomePage from '../page-objects/pages/HomePage';
 import RegisterForm from '../page-objects/pages/RegisterForm';
+import { faker } from '@faker-js/faker';
+
 
 test.describe(("Homework24 test cases"), () => {
   let homePage: HomePage;
@@ -129,20 +131,20 @@ test.describe(("Homework24 test cases"), () => {
   });
 
   test.describe('Registration process validations', () => {
-    test('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
-      const input = 'autotest';
+    test.only('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
+      const input = faker.person.suffix();
 
       registerForm.inputNameField(input);
       registerForm.inputLastNameField(input);
       registerForm.inputEmailField(`testdata+${input}@gmail.com`);
-      registerForm.inputPasswordField('!sSq&m1L2Xader');
+      registerForm.inputPasswordField(process.env.PASS!);
       registerForm.inputReEnterPassField('12345');
 
       expect(registerForm.registerButton).toBeDisabled();
     });
 
     test('Check Registration successfull process', async ({page}) => {
-      const input = 'autotest';
+      const input = faker.person.suffix()
 
       registerForm.inputNameField(input);
       await page.waitForTimeout(500);
@@ -150,9 +152,9 @@ test.describe(("Homework24 test cases"), () => {
       await page.waitForTimeout(500);
       registerForm.inputEmailField(`testdata+${input}@gmail.com`);
       await page.waitForTimeout(500);
-      registerForm.inputPasswordField('!sSq&m1L2Xader');
+      registerForm.inputPasswordField(process.env.PASS!);
       await page.waitForTimeout(500);
-      registerForm.inputPasswordField('!sSq&m1L2Xader');
+      registerForm.inputReEnterPassField(process.env.PASS!);
 
       expect(registerForm.registerButton).toBeEnabled();
       
