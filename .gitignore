@@ -8,4 +8,5 @@ package-lock.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/test-data/states/
 .env
