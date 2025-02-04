@@ -41,9 +41,14 @@ export default defineConfig({
       testMatch: '*setup/*.ts'
     },
     {
-      name: 'chromium',
+      name: 'regression',
       use: { ...devices['Desktop Chrome'] },
       dependencies: ['setup']
+    },
+    {
+      name: 'api',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: '**api.spec.ts'
     }
   ],
 });
