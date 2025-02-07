@@ -18,7 +18,7 @@ export default class SignInForm{
     }
     //#endregion
 
-    //#region 
+    //#region Verifications
     async checkProfilepageLoaded(){
         await expect(this.profileHeader).toBeVisible();
         //await expect(this.page).toHaveURL('**/profile');
