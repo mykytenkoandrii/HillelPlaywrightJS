@@ -131,7 +131,7 @@ test.describe(("Homework24 test cases"), () => {
   });
 
   test.describe('Registration process validations', () => {
-    test.only('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
+    test('Check "Register" button is inactive if one field has invalid data', async ({page}) => {
       const input = faker.person.suffix();
 
       registerForm.inputNameField(input);
